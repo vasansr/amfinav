@@ -17,6 +17,14 @@ The project runs as a couple of Amazon AWS' Lambda services.
 
 To create Lambdas for these, use the AWS console and copy-paste the code.
 
+## Access Control
+
+Access to the S3 bucket from the Lambda functions requires the following:
+
+   1. Creation of an IAM Role that has access to the S3 Bucket where the file will be written or read from.
+
+   2. When creating the Lambda function (or later), the Role has to be assigned to the role which was created in the previous step. Now, the function will assume that role automatically when executing the code. No special configuration (Key / Secret) is required when initializing boto.
+
 ## Pricing
 
 Currently this is hosted in my private accounts, so the API is not yet public (mainly because of the charges that I'll incur on AWS if made public). If and when this becomes public, I may add API restrictions on how many calls a single client can make so that the charges can be kept to a minimum.

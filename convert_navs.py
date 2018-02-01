@@ -21,7 +21,7 @@ def get_navs():
     start = time.time()
     last = start
     conn = httplib.HTTPConnection("portal.amfiindia.com")
-    conn.request("GET", "/spages/NAV0.txt")
+    conn.request("GET", "/spages/NAVAll.txt")
     resp = conn.getresponse()
 
     if resp.status == 200:
